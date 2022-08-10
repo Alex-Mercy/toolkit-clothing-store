@@ -4,7 +4,7 @@ import CartDropdown from './cart-dropdown/CartDropdown'
 import ProductItem from './ProductItem'
 
 const Home: FC = () => {
-  const { data, isLoading, error } = useGetProductsQuery(6)
+  const { data, isLoading, error } = useGetProductsQuery(20)
 
   return (
     <div>
@@ -19,7 +19,7 @@ const Home: FC = () => {
         <div className='text-red'>{error}</div>
       ) : (
         <div className='flex flex-wrap justify-between'>
-          {data?.map((product: any) => (
+          {data?.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
         </div>
